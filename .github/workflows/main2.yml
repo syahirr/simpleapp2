@@ -1,4 +1,4 @@
-name: Deploy
+name: Local VM Deploy
 
 on:
   push:
@@ -7,13 +7,17 @@ on:
 
 jobs:
   deploy:
-    runs-on: self-hosted
+    runs-on: self-hosted  # Your VM runner label
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Deploy app
+      - name: Run deployment commands
         run: |
-          cd /home/test/
-          git checkout master
-          git pull
+          echo "Running inside the VM..."
+          cd /home/admin/simpleapp2
+          git pull origin main
+          # Add your app build/restart steps here, e.g.:
+          # npm install
+          # npm run build
+          # systemctl restart myapp
