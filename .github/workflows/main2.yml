@@ -15,9 +15,19 @@ jobs:
       - name: Run deployment commands
         run: |
           echo "Running inside the VM..."
-          cd /home/admin/_work/simpleapp2
-          git pull origin main
+          cd /home/admin/_work/simpleapp2\
+          
+          #git pull origin main
           # Add your app build/restart steps here, e.g.:
+          # npm install
+          # npm run build
+          # systemctl restart myapp
+
+          git checkout master
+          git pull
+          
+          # Add your other deployment commands below
+          # Example:
           # npm install
           # npm run build
           # systemctl restart myapp
