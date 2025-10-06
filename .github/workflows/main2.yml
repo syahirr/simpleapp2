@@ -23,7 +23,7 @@ jobs:
           # But if you want to confirm:
           cd /home/admin/_work/simpleapp2/simpleapp2
 
-          git checkout master
+          git checkout main
           git pull
 
           # Example deployment steps
