@@ -7,7 +7,8 @@ on:
 
 jobs:
   deploy:
-    runs-on: self-hosted  # Your VM runner label
+    runs-on: self-hosted  # Run inside your VM
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -15,19 +16,17 @@ jobs:
       - name: Run deployment commands
         run: |
           echo "Running inside the VM..."
-          cd /home/admin/_work/simpleapp2\
-          
-          #git pull origin main
-          # Add your app build/restart steps here, e.g.:
-          # npm install
-          # npm run build
-          # systemctl restart myapp
+          pwd
+          ls -la
+
+          # You don't need to cd manually; you're already in the repo folder.
+          # But if you want to confirm:
+          cd /home/admin/_work/simpleapp2/simpleapp2
 
           git checkout master
           git pull
-          
-          # Add your other deployment commands below
-          # Example:
+
+          # Example deployment steps
           # npm install
           # npm run build
           # systemctl restart myapp
