@@ -18,7 +18,7 @@ jobs:
       - name: Deploy app
         run: |
           echo "Running deployment inside VM..."
-          cd /home/test/
+          cd /home/admin/_work/simpleapp2
           git checkout master
           git pull
           # Add your other deployment commands below
