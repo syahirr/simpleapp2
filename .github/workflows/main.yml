@@ -6,7 +6,9 @@ on:
       - main # Replace with your branch name
 jobs:
   deploy:
-    runs-on: [self-hosted, Linux, X64] # Run this job on the latest Ubuntu version
+    #runs-on: [self-hosted, Linux, X64] # Run this job on the latest Ubuntu version
+    runs-on: 
+      group: ubuntu-runners
 
     steps:
       - name: Checkout
